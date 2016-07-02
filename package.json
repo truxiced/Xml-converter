@@ -1,6 +1,6 @@
 {
-  "name": "softhouse",
-  "description": "Softhouse Assignment",
+  "name": "assignment",
+  "description": "Assignment",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
