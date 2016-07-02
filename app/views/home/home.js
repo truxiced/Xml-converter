@@ -2,8 +2,9 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!./assignment.html'
-], function ($, _, Backbone, statsTemplate) {
+    'text!./home.html',
+    'css!./home'
+], function ($, _, Backbone, template, style) {
     'use strict';
 
     // Our overall **AppView** is the top-level piece of UI.
@@ -11,7 +12,7 @@ define([
 
         el: '#main-container',
         // Compile our stats template
-        template: _.template(statsTemplate),
+        template: _.template(template),
 
         initialize: function () {
 

@@ -6,6 +6,8 @@ require.config({
     // The shim config allows us to configure dependencies for
     // scripts that do not call define() to register a module
     shim: {
+
+
         underscore: {
             exports: '_'
         },
@@ -26,20 +28,22 @@ require.config({
         underscore: '../node_modules/underscore/underscore',
         backbone: '../node_modules/backbone/backbone',
         backboneLocalstorage: '../node_modules/backbone.localstorage/backbone.localStorage',
-        text: '../node_modules/requirejs-text/text'
+        text: '../node_modules/requirejs-text/text',
+        css: '../node_modules/require-css/css'
     }
 });
 
 require([
     'backbone',
-    'assignment'
-  //  'routers/router'
-], function (Backbone, AppView, Workspace) {
+    'views/header/header',
+    'routers/router'
+], function (Backbone, Header, Workspace) {
     /*jshint nonew:false*/
     // Initialize routing and start Backbone.history()
-   // new Workspace();
+    new Workspace();
+
     Backbone.history.start();
 
     // Initialize the application view
-    var app = new AppView();
+    new Header();
 });
