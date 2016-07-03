@@ -7,7 +7,9 @@ require.config({
     // scripts that do not call define() to register a module
     shim: {
 
-
+        socketio: {
+            exports: 'io'
+        },
         underscore: {
             exports: '_'
         },
@@ -29,7 +31,8 @@ require.config({
         backbone: '../node_modules/backbone/backbone',
         backboneLocalstorage: '../node_modules/backbone.localstorage/backbone.localStorage',
         text: '../node_modules/requirejs-text/text',
-        css: '../node_modules/require-css/css'
+        css: '../node_modules/require-css/css',
+        socketio: '../node_modules/socket.io/node_modules/socket.io-client/socket.io'
     }
 });
 

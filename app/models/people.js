@@ -7,9 +7,19 @@ define([
 
     var People = Backbone.Model.extend({
 
+        url: function(){
+            return "test"
+        },
+
+        defaults: {
+            person: '',  // Some string
+        },
+
         initialize: function () {
 
             this.persons = [];
+
+
 
         },
 
@@ -20,6 +30,8 @@ define([
          */
         addPerson: function(person) {
             this.persons.push(person);
+
+            this.set({"person":this.persons});
         },
 
         /**

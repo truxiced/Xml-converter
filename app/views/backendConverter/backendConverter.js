@@ -2,17 +2,16 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!./simpleConverter.html',
-    'css!./simpleConverter',
-    '../../utils/converter'
+    'text!./backendConverter.html',
+    'css!./backendConverter',
+    '../../utils/converter',
 ], function ($, _, Backbone, template, style, Converter) {
     'use strict';
 
-    // Our overall **AppView** is the top-level piece of UI.
-    var simpleConverter = Backbone.View.extend({
+    var backendConverter = Backbone.View.extend({
 
         el: '#main-container',
-        // Compile our stats template
+
         template: _.template(template),
 
         initialize: function () {
@@ -36,12 +35,21 @@ define([
      *
      */
     function convertListener() {
-        $('#simpleConverter-convert').click(function(){
-            var xml = Converter.convertToXML($('#simpleConverter-source').val());
 
-            $('#simpleConverter-result').val(xml);
+        $('#simpleConverter-convert').click(function(){
+            var model = Converter.convertToModel($('#simpleConverter-source').val());
+
+            model.save({},{
+                success: function(model,response) {
+
+                }, error: function(model,response) {
+                    console.log("error flow");
+
+                    $('#simpleConverter-result').val(response.responseText);
+                }
+            });
         })
     }
 
-    return simpleConverter;
+    return backendConverter;
 });

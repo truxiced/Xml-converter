@@ -13,7 +13,9 @@
     "jquery": "2.2.4",
     "backbone.localstorage": "1.1.16",
     "requirejs-text": "2.0.12",
-    "json2xml": "0.1.2"
+    "json2xml": "0.1.2",
+    "body-parser":"1.15.2",
+    "socket.io": "1.4.8"
 
   }
 }

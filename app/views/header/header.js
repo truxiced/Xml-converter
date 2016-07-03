@@ -44,7 +44,9 @@ define([
 
             simpleConverterListener.call(this);
 
+            backendConverterListener.call(this);
 
+            socketConverterListener.call(this);
         }
 
     });
@@ -74,6 +76,34 @@ define([
         $("#simpleConverter" ).click(function() {
 
             toggleLink.call(this,$("#simpleConverter-item"));
+
+        }.bind(this));
+    }
+
+    /**
+     * Adds listeners for backend converter rest link
+     *
+     * @private
+     */
+    function backendConverterListener() {
+
+        $("#backendConverter" ).click(function() {
+
+            toggleLink.call(this,$("#backendConverter-item"));
+
+        }.bind(this));
+    }
+
+    /**
+     * Adds listeners for backend converter socket link
+     *
+     * @private
+     */
+    function socketConverterListener() {
+
+        $("#socketConverter" ).click(function() {
+
+            toggleLink.call(this,$("#socketConverter-item"));
 
         }.bind(this));
     }

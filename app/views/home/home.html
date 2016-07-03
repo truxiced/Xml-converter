@@ -1,9 +1,37 @@
 <blockquote>
-    <p>About</p>
-    <footer>This project is created for the purpose for a assignment</footer>
+    <h2>About</h2>
+    <footer>This project is created for the purpose for a assignment. For this I have used a couple of different libs to get the structure of the project.
+        This is some of them, check the package.json for the complete list and version: </footer>
 </blockquote>
+    <ul>
+        <li class="small">NodeJS</li>
+        <li class="small">Express</li>
+        <li class="small">BackboneJS</li>
+        <li class="small">RequireJS</li>
+        <li class="small">Bootstrap</li>
+        <li class="small">Underscore</li>
+    </ul>
+<blockquote>
+    <footer>I choose to use NodeJS as the server for a couple of reasons. But mainly because simplicity and time. It could also have been done with a java web application with Jersey.</footer>
+</blockquote>
+
 
 <blockquote>
     <p>Simple converter</p>
-    <footer>The simple converter allows you to paste a text direct in the browser which will be converted in javascript. Validation?</footer>
+    <footer>The simple converter allows you to paste a text direct in the browser which will be converted in javascript to XML.
+        I have created 3 Backbone.Model object (people, person and family) which is populated with the data from the text area. Each model converts its own data to XML with a recursive function.</footer>
+</blockquote>
+
+<blockquote>
+    <p>Backend converter REST</p>
+    <footer>This is similar to the simple converter. Once again the 3 Backbone.Models are used to store the data.
+        This time im not using the recursive function to generate the XML but sending it as a POST method to the server. On the server side I used a lib called json2xml to convert it to xml and send it back in the response.
+    </footer>
+</blockquote>
+
+<blockquote>
+    <p>Backend converter Socket</p>
+    <footer>Since I don't think its i good ide to use HTTP POST method to call a function to do a calculation on the server side and there return a different typ of model,
+        I used Socket.io to let the client send the json string to the server with sockets. This can also be used as Server Side Event when updating statistics and so on.
+    </footer>
 </blockquote>
