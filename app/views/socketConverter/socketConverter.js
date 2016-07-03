@@ -9,8 +9,7 @@ define([
 ], function ($, _, Backbone, template, style, Converter, io) {
     'use strict';
 
-    // Our overall **AppView** is the top-level piece of UI.
-    var backendConverter = Backbone.View.extend({
+    var socketConverter = Backbone.View.extend({
 
         el: '#main-container',
         // Compile our stats template
@@ -40,18 +39,18 @@ define([
      */
     function convertListener() {
 
-        $('#simpleConverter-convert').click(function(){
-            var model = Converter.convertToModel($('#simpleConverter-source').val());
+        $('#socketConverter-convert').click(function(){
+            var model = Converter.convertToModel($('#socketConverter-source').val());
 
             this.socket.emit("json2xml",model.toJSON())
 
             this.socket.on("json2xml", function(xml) {
 
-                $('#simpleConverter-result').val(xml);
+                $('#socketConverter-result').val(xml);
 
             })
         }.bind(this))
     }
 
-    return backendConverter;
+    return socketConverter;
 });

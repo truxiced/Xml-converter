@@ -8,7 +8,6 @@ define([
 ], function ($, _, Backbone, template, style, Converter) {
     'use strict';
 
-    // Our overall **AppView** is the top-level piece of UI.
     var simpleConverter = Backbone.View.extend({
 
         el: '#main-container',

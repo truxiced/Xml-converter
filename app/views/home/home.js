@@ -7,7 +7,6 @@ define([
 ], function ($, _, Backbone, template, style) {
     'use strict';
 
-    // Our overall **AppView** is the top-level piece of UI.
     var AppView = Backbone.View.extend({
 
         el: '#main-container',

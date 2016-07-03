@@ -1,7 +1,6 @@
 /*global require*/
 'use strict';
 
-// Require.js allows us to configure shortcut alias
 require.config({
     // The shim config allows us to configure dependencies for
     // scripts that do not call define() to register a module
@@ -41,7 +40,7 @@ require([
     'views/header/header',
     'routers/router'
 ], function (Backbone, Header, Workspace) {
-    /*jshint nonew:false*/
+    
     // Initialize routing and start Backbone.history()
     new Workspace();
 

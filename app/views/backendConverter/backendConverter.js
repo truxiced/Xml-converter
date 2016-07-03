@@ -4,7 +4,7 @@ define([
     'backbone',
     'text!./backendConverter.html',
     'css!./backendConverter',
-    '../../utils/converter',
+    '../../utils/converter'
 ], function ($, _, Backbone, template, style, Converter) {
     'use strict';
 
@@ -36,8 +36,8 @@ define([
      */
     function convertListener() {
 
-        $('#simpleConverter-convert').click(function(){
-            var model = Converter.convertToModel($('#simpleConverter-source').val());
+        $('#backendConverter-convert').click(function(){
+            var model = Converter.convertToModel($('#backendConverter-source').val());
 
             model.save({},{
                 success: function(model,response) {
@@ -45,7 +45,7 @@ define([
                 }, error: function(model,response) {
                     console.log("error flow");
 
-                    $('#simpleConverter-result').val(response.responseText);
+                    $('#backendConverter-result').val(response.responseText);
                 }
             });
         })
