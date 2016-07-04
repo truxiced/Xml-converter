@@ -40,12 +40,13 @@ require([
     'views/header/header',
     'routers/router'
 ], function (Backbone, Header, Workspace) {
-    
+
+    // Initialize the application view
+    var header = new Header();
+
     // Initialize routing and start Backbone.history()
-    new Workspace();
+    new Workspace({header: header});
 
     Backbone.history.start();
 
-    // Initialize the application view
-    new Header();
 });

@@ -7,7 +7,6 @@ define([
 ], function ($, _, Backbone, template, style) {
     'use strict';
 
-    // Our overall **AppView** is the top-level piece of UI.
     var AppView = Backbone.View.extend({
 
         el: '#main-header',
@@ -23,8 +22,6 @@ define([
              */
             this.activeLink = $("#home-item");
 
-            this.initializeHeaderLinkListeners();
-
         },
 
         render: function () {
@@ -35,78 +32,40 @@ define([
         },
 
         /**
-         * initializes all links contained in the header.
+         * Sets home link to active
          *
          */
-        initializeHeaderLinkListeners: function() {
-
-            addhHomeLinkListener.call(this);
-
-            addClientConverterListener.call(this);
-
-            addBackendConverterListener.call(this);
-
-            addSocketConverterListener.call(this);
-        }
-
-    });
-
-    /**
-     * Adds listeners for home link
-     *
-     * @private
-     */
-    function addhHomeLinkListener() {
-
-        $("#home" ).click(function() {
+        setHomeLink: function () {
 
             toggleLink.call(this,$("#home-item"));
 
+        },
 
-        }.bind(this));
-    }
-
-    /**
-     * Adds listeners for client converter link
-     *
-     * @private
-     */
-    function addClientConverterListener() {
-
-        $("#clientConverter" ).click(function() {
-
+        /**
+         * Sets client link to active
+         *
+         */
+        setClientConverterLink: function () {
             toggleLink.call(this,$("#clientConverter-item"));
+        },
 
-        }.bind(this));
-    }
-
-    /**
-     * Adds listeners for backend converter rest link
-     *
-     * @private
-     */
-    function addBackendConverterListener() {
-
-        $("#backendConverter" ).click(function() {
-
+        /**
+         * Sets backend rest link to active
+         *
+         */
+        setBackendConverterLink: function () {
             toggleLink.call(this,$("#backendConverter-item"));
+        },
 
-        }.bind(this));
-    }
-
-    /**
-     * Adds listeners for backend converter socket link
-     *
-     * @private
-     */
-    function addSocketConverterListener() {
-
-        $("#socketConverter" ).click(function() {
-
+        /**
+         * Sets backend socket link to active
+         *
+         */
+        setSocketConverterLink: function () {
             toggleLink.call(this,$("#socketConverter-item"));
+        }
 
-        }.bind(this));
-    }
+    });
 
     /**
      * Removes highlight from the current active link and add highlight on parameter element.
