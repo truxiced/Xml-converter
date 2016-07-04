@@ -18,7 +18,7 @@ define([
 
             this.render();
 
-            convertListener.call(this);
+            addListenerForConvert.call(this);
         },
 
         render: function () {
@@ -34,15 +34,13 @@ define([
      * Uses Converter to to generate a XML from the input in the textArea.
      *
      */
-    function convertListener() {
+    function addListenerForConvert() {
 
         $('#backendConverter-convert').click(function(){
             var model = Converter.convertToModel($('#backendConverter-source').val());
 
             model.save({},{
-                success: function(model,response) {
-
-                }, error: function(model,response) {
+                error: function(model,response) {
                     console.log("error flow");
 
                     $('#backendConverter-result').val(response.responseText);

@@ -65,22 +65,22 @@ define([
             switch (sections[0]) {
                 case "P":
 
-                    isPerson.call(this, sections);
+                    setPerson.call(this, sections);
 
                     break;
                 case "T":
 
-                    isPhone.call(this, sections);
+                    setPhone.call(this, sections);
 
                     break;
                 case "A":
 
-                    isAddress.call(this, sections);
+                    setAddress.call(this, sections);
 
                     break;
                 case "F":
 
-                    isFamily.call(this, sections);
+                    setFamily.call(this, sections);
 
                     break;
             }
@@ -98,7 +98,7 @@ define([
      *
      * @param sections
      */
-    function isPerson(sections) {
+    function setPerson(sections) {
         if (this.family) {
             this.person.addFamily(this.family);
             this.family = undefined;
@@ -116,7 +116,7 @@ define([
      *
      * @param sections
      */
-    function isPhone(sections) {
+    function setPhone(sections) {
 
         var model = !this.family ? this.person : this.family;
 
@@ -134,7 +134,7 @@ define([
      *
      * @param sections
      */
-    function isAddress(sections) {
+    function setAddress(sections) {
 
         var model = !this.family ? this.person : this.family;
 
@@ -153,7 +153,7 @@ define([
      *
      * @param sections
      */
-    function isFamily(sections) {
+    function setFamily(sections) {
         if (this.family) {
             this.person.addFamily(this.family);
         }

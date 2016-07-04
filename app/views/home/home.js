@@ -3,8 +3,7 @@ define([
     'underscore',
     'backbone',
     'text!./home.html',
-    'css!./home'
-], function ($, _, Backbone, template, style) {
+], function ($, _, Backbone, template) {
     'use strict';
 
     var AppView = Backbone.View.extend({

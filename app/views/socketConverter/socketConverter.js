@@ -21,7 +21,7 @@ define([
 
             this.socket = io.connect();
 
-            convertListener.call(this);
+            addListenerForConvert.call(this);
         },
 
         render: function () {
@@ -37,12 +37,12 @@ define([
      * Uses Converter to to generate a XML from the input in the textArea.
      *
      */
-    function convertListener() {
+    function addListenerForConvert() {
 
         $('#socketConverter-convert').click(function(){
             var model = Converter.convertToModel($('#socketConverter-source').val());
 
-            this.socket.emit("json2xml",model.toJSON())
+            this.socket.emit("json2xml",model.toJSON());
 
             this.socket.on("json2xml", function(xml) {
 

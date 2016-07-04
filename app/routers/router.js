@@ -3,16 +3,16 @@ define([
     'underscore',
     'backbone',
     'views/home/home',
-    'views/simpleConverter/simpleConverter',
+    '../views/clientConverter/clientConverter',
     'views/backendConverter/backendConverter',
     'views/socketConverter/socketConverter'
-], function ($, _, Backbone, Home, SimpleConverter, BackendConverter, SocketConverter) {
+], function ($, _, Backbone, Home, ClientConverter, BackendConverter, SocketConverter) {
     'use strict';
 
     var AppRouter = Backbone.Router.extend({
         routes: {
             "Home": "Home",
-            "simpleConverter": "simpleConverter",
+            "clientConverter": "clientConverter",
             "backendConverter": "backendConverter",
             "socketConverter": "socketConverter",
             "*actions" : "Home"
@@ -24,8 +24,8 @@ define([
             new Home();
         },
 
-        simpleConverter: function() {
-            new SimpleConverter();
+        clientConverter: function() {
+            new ClientConverter();
         },
 
         backendConverter: function() {

@@ -40,13 +40,13 @@ define([
          */
         initializeHeaderLinkListeners: function() {
 
-            homeLinkListener.call(this);
+            addhHomeLinkListener.call(this);
 
-            simpleConverterListener.call(this);
+            addClientConverterListener.call(this);
 
-            backendConverterListener.call(this);
+            addBackendConverterListener.call(this);
 
-            socketConverterListener.call(this);
+            addSocketConverterListener.call(this);
         }
 
     });
@@ -56,7 +56,7 @@ define([
      *
      * @private
      */
-    function homeLinkListener() {
+    function addhHomeLinkListener() {
 
         $("#home" ).click(function() {
 
@@ -67,15 +67,15 @@ define([
     }
 
     /**
-     * Adds listeners for simple converter link
+     * Adds listeners for client converter link
      *
      * @private
      */
-    function simpleConverterListener() {
+    function addClientConverterListener() {
 
-        $("#simpleConverter" ).click(function() {
+        $("#clientConverter" ).click(function() {
 
-            toggleLink.call(this,$("#simpleConverter-item"));
+            toggleLink.call(this,$("#clientConverter-item"));
 
         }.bind(this));
     }
@@ -85,7 +85,7 @@ define([
      *
      * @private
      */
-    function backendConverterListener() {
+    function addBackendConverterListener() {
 
         $("#backendConverter" ).click(function() {
 
@@ -99,7 +99,7 @@ define([
      *
      * @private
      */
-    function socketConverterListener() {
+    function addSocketConverterListener() {
 
         $("#socketConverter" ).click(function() {
 

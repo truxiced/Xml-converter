@@ -2,13 +2,13 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!./simpleConverter.html',
-    'css!./simpleConverter',
+    'text!./clientConverter.html',
+    'css!./clientConverter',
     '../../utils/converter'
 ], function ($, _, Backbone, template, style, Converter) {
     'use strict';
 
-    var simpleConverter = Backbone.View.extend({
+    var clientConverter = Backbone.View.extend({
 
         el: '#main-container',
         // Compile our stats template
@@ -18,7 +18,7 @@ define([
 
             this.render();
 
-            convertListener.call(this);
+            addListenerForConvert.call(this);
         },
 
         render: function () {
@@ -34,13 +34,13 @@ define([
      * Uses Converter to to generate a XML from the input in the textArea.
      *
      */
-    function convertListener() {
-        $('#simpleConverter-convert').click(function(){
-            var xml = Converter.convertToXML($('#simpleConverter-source').val());
+    function addListenerForConvert() {
+        $('#clientConverter-convert').click(function(){
+            var xml = Converter.convertToXML($('#clientConverter-source').val());
 
-            $('#simpleConverter-result').val(xml);
+            $('#clientConverter-result').val(xml);
         })
     }
 
-    return simpleConverter;
+    return clientConverter;
 });
